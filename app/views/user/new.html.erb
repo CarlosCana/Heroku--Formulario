@@ -1,0 +1,116 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="navbar-toggler-icon"></span>
+                </button> <a class="navbar-brand" href="#">Nos encantan las formas</a>
+            </nav>
+            <div class="row">
+                <div class="col-md-2">
+                </div> 
+                <div class="col-md-8">
+                    <form role="form">
+                        <div class="form-group">
+
+<p>
+
+
+
+<h1>El formulario</h1>
+
+
+
+
+
+<h3>Llena el formulario, ahora</h3>
+
+
+
+<form action="./create" method= "POST">
+<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  
+	<div class="form-group">
+	  Name:<br>
+	  <input type="text" name="username" class="form-control" placeholder="Escribe tu nombre">
+	</div>
+
+	<div class="form-group">
+	  Email: <br>
+	  <input type="email" name="email" class="form-control" placeholder="Escribe tu email">
+	</div>
+
+	<div class="form-group">
+	  Bio:<br>
+	  <textarea placeholder="Cuentalo todo"></textarea>
+	</div>
+
+	  <br>
+	  <input type="submit" value="Submit" class="btn btn-primary">
+</form> 
+</p>
+
+<p>
+<h3>El formulario, llenalo</h3>
+
+
+   <%= form_tag(create_path) %> <!-- la method post et auth token se mettent automatiquement -->
+   	
+   	<div class="form-group">
+      <%= label_tag 'Name' %>  <!-- Creates "for" for all the labels  -->
+      
+      <%= text_field_tag 'username', nil,  placeholder:'Escribe tu nombre', class:"form-control"%> <!-- Creates "id" and "name"   -->
+    </div>
+
+    <div class="form-group">
+      <%= label_tag 'Email' %>
+      <%= email_field_tag 'email', nil, placeholder:'Escribe tu email', class:"form-control"%>
+    </div>
+
+    <div class="form-group">
+      <%= label_tag 'Bio' %>
+      <%= text_area_tag 'bio' , nil, placeholder:'Cuentalo todo', class:"form-control"%>
+    </div>
+
+      <%= submit_tag "Create Post", class:"btn btn-primary" %>
+
+    <%= form_tag %>
+</p>
+
+<p>
+<h3>Por favor, llena este formulario</h3>
+
+
+
+<%= form_for :user do |f| %>
+<div class="form-group">
+  First name: <%= f.text_field :username , class:"form-control", placeholder:'Escribe tu nombre'%></div>
+ <div class="form-group">
+  Email : <%= f.email_field :email , class:"form-control", placeholder:'Escribe tu email'%></div>
+ <div class="form-group">
+  Bio : <%= f.text_area :bio , class:"form-control", placeholder:'Cuentalo todo'%></div>
+ 
+  <%= f.submit class:"btn btn-primary"%>
+<% end %>
+</p>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+ 
